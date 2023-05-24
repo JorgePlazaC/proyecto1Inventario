@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lmqalXIrjstLXzFjQaaQvj85GcNk9Asiwylv2pZ/AWbzdxHWB0tlFwqpAykxmeFFulvVGHoZtsiorS6/UoqF8w==",
+  "dgSpecHash": "UezWSuHCOGeKy9Tt1wsdSztCDyCnc7/9gpB+jUe7bi9uE+Z0/FWb1JEMxN3WOCFeuo8hiq11C7ygoBmgw3QBeQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Administrador\\Documents\\Informatica Material\\Cuarto año\\Septimo semestre\\Proyecto desarrollo de soluciones\\Proyecto1Inventario\\Proyecto1Inventario.csproj",
+  "projectFilePath": "C:\\Users\\Administrador\\Documents\\Informatica Material\\Cuarto año\\Septimo semestre\\Proyecto desarrollo de soluciones\\proyecto1Inventario\\Proyecto1Inventario.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrador\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\Administrador\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

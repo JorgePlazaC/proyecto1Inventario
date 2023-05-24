@@ -4,7 +4,70 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Sucursal');
+        data.addColumn('number', 'Cantidad Vendida');
+        data.addRows(@Html.Raw(Json.Serialize(Model.DatosGrafico)));
+
+        var options = {
+            title: 'Productos Vendidos por Sucursal',
+            bars: 'vertical'
+        };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+    }
+</script>
+
+<script>
+    google.charts.load('current', { 'packages': ['corechart'] });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Mes');
+        data.addColumn('number', 'Ventas Totales');
+        data.addRows(@Html.Raw(Json.Serialize(Model.VentasTotales)));
+
+        var options = {
+            title: 'Ventas Totales por Mes (Año Actual)',
+            curveType: 'linear',
+            legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div1'));
+        chart.draw(data, options);
+    }
+</script>
+</head>
+
+<div id="chart_div" style="width: 100%; height: 400px;"></div>
+<div id="chart_div1" style="width: 100%; height: 400px;"></div>
+
+
+<table class="table">
+    <tr><th>id</th><th>Nombre</th></tr>
+
+    @foreach (var v in Model.VentasTotales)
+    {
+        <tr><td>@v</td><td>@v</td></tr>
+    }
+
+</table>
+
+<table class="table">
+    <tr><th>id</th><th>Nombre</th></tr>
+
+    @foreach (var v in Model.ProductosVendidos)
+    {
+        <tr><td>@v.NombreSucursal</td><td>@v.CantidadVendida</td></tr>
+    }
+
+</table>
