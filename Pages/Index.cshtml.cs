@@ -36,7 +36,7 @@ public class IndexModel : PageModel
         VentasTotales = context.Venta
             .Where(v => v.Fecha.Year == year)
             .GroupBy(v => v.Fecha.Month)
-            .Select(g => new object[] { new DateTime(year, g.Key, 1).ToString("MMM"), g.Sum(v => v.Detalles.Sum(d => d.Precio*d.Cantidad)) })
+            .Select(g => new object[] { new DateTime(year, g.Key, 1).ToString("MMM"), g.Sum(v => v.Detalles.Sum(d => d.Precio)) })
             .ToList();
     }
 
